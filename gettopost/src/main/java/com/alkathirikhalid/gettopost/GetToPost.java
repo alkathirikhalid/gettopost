@@ -44,7 +44,7 @@ public class GetToPost {
         Set<String> args = uri.getQueryParameterNames();
         // Holder for all the extracted and constructed query parameters from Get to Post format
         StringBuilder params = new StringBuilder();
-        // Loop through all the unique name set
+        // Loop through all the unique name set if any
         for (String param : args) {
             // If first time looping
             if (params.toString().equals("")) {
@@ -52,7 +52,7 @@ public class GetToPost {
                 params.append(param).append("=").append(uri.getQueryParameter(param));
                 // For consecutive loops
             } else {
-                // Add Ampersand the the Key and Value of the Parameter
+                // Add Ampersand then the Key and Value of the Parameter
                 params.append("&").append(param).append("=").append(uri.getQueryParameter(param));
             }
         }
